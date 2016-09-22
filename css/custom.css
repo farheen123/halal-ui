@@ -1,0 +1,117 @@
+/*.container {
+    width: 1278px;
+}*/
+.inner-banner{
+	min-height: 50px !important;
+}
+.inner-banner-info{
+	margin-top: -51px;
+}
+.btn-primary{
+    background-color: #F5EEEE !important;
+    color:#000 !important;
+    border-color: gray;
+}
+.sectionHeading{
+    font-size:15px;
+}
+.col-xs-provides-3 {
+    width: 7%;
+}
+.padding-box{
+    padding: 49px 16px 0px 19px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+.seach_h_title {
+    border-bottom: 1px solid #DDD;
+    color: #666;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.logo-title {
+    border-bottom: 0px dotted #fff;
+    width: 63%;
+    margin-bottom: 0.8em;
+}
+.margin-left{
+    margin-left: 1px;
+}
+.margin-bottom{
+    margin-bottom:15px;
+}
+.border-gray{
+border: 1px solid rgb(204, 204, 204);
+border-radius: 5px;
+padding: 0.2em 0.6em 0.3em;
+}
+.margin-class{
+    margin: 5px 3px;
+}
+.small-img{
+    width: 30px;
+}
+ @media screen and (max-width:320px){
+    .container {
+    width: 320px;
+}
+.inner-banner-info {
+    margin-top: -8px;
+}
+.col-xs-provides-3 {
+    width: 7%;
+}
+    }
+    @media screen and (max-width:768px){
+        .inner-banner-info {
+    margin-top: -3px;
+}
+}
+.font-size-feature{
+    font-size: 12px;
+}
+.navbar-default {
+    background-color: #F1F1F1 !important;
+    border-color: #F1F1F1 !important;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+.navbar-toggle {
+    position: relative;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #DDD;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0px, 0px, 0px, 0px);
+    border: 0px none;
+}
+.icon-bar {
+    background-color: #888;
+}
+.icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
