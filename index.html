@@ -6,8 +6,13 @@
 <script src="js/jquery.min.js"></script>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/menu/default.css" />
+<link rel="stylesheet" type="text/css" href="css/menu/component.css" />
+<script src="js/menu/modernizr.custom.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- css for responsiver menu -->
+
 <!--Animation-->
 <script src="js/wow.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
@@ -18,58 +23,67 @@
 <script src="js/simpleCart.min.js"> </script>	
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+<link href="css/login-register.css" rel="stylesheet" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+	<script src="js/login-register.js" type="text/javascript"></script>
 </head>
 <body>
     <!-- header-section-starts -->
 	<div class="header">
 		<div class="container">
-			<div class="top-header">
+			<div class="main clearfix">
 				<div class="logo">
 					<a href="index.html"><img src="images/fullLogo.png" class="img-responsive" alt="" /></a>
 				</div>
-				 <div class="navbar-header">
-               <button type="button" class="navbar-toggle collapsed text-center" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               </button>
-            </div>
-				<div class="clearfix"></div>
+				<nav id="menu" class="nav">					
+					<ul>
+						<li>
+							<a href="#">
+								<!-- <span class="icon"> 
+									<i aria-hidden="true" class="icon-services"></i>
+								</span> -->
+								<span class="span-title">Islamic Schools</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<!-- <span class="icon">
+									<i aria-hidden="true" class="icon-portfolio"></i>
+								</span> -->
+								<span class="span-title">Jamat In Masjid</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<!-- <span class="icon">
+									<i aria-hidden="true" class="icon-blog"></i>
+								</span> -->
+								<span class="span-title">Islamic Stores</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<!-- <span class="icon">
+									<i aria-hidden="true" class="icon-contact"></i>
+								</span> -->
+								<span class="span-title">Contact</span>
+							</a>
+						</li>
+	<li>
+							<a href="#">
+								<!-- <span class="icon">
+									<i aria-hidden="true" class="icon-contact"></i>
+								</span> -->
+								<span class="span-title" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</span>
+							</a>
+						</li>
+
+					</ul>
+				</nav>
 			</div>
 		</div>
 		
-			<div class="menu-bar">
-			<div class="container">
-				<div class="top-menu">
-					<div class="navigation">
-         <nav >
-            <!-- Brand and toggle get grouped for better mobile display -->
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-               <nav class="stroke">
-                  <ul class="nav navbar-nav">                
-                  <li class="activeclass">
-                  <a href="" class="hvr-rectangle-out">Home</a></li>
-                  <li class="activeclass">
-                  <a href="popular_restaurants_list.html" class="hvr-rectangle-out">Popular Restaurants</a></li>
-                  <li class="activeclass">
-                  <a href="" class="hvr-rectangle-out">Order</a></li>
-                  <li class="activeclass">
-                  <a href="" class="hvr-rectangle-out">contact</a></li>
-                  	<li><a data-toggle="modal" aria-labelledby="myModalLabel" data-target="#myRegister">Login/Register</a> </li>
-						<div class="clearfix"></div>
-					</ul>
-               </nav>
-            </div>
-            <!-- /.navbar-collapse -->
-         </nav>
-      </div>
-				</div>
-
-			</div>
-		</div>
 		<div class="banner wow fadeInUp" data-wow-delay="0.4s" id="Home">
 		    <div class="container">
 				<div class="banner-info">
@@ -94,7 +108,69 @@
 						  </div>
 						</form>
 						</div>
-	
+	<div class="modal fade login" id="loginModal">
+		      <div class="modal-dialog login animated">
+    		      <div class="modal-content">
+    		         <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login with</h4>
+                    </div>
+                    <div class="modal-body">  
+                        <div class="box">
+                             <div class="content">
+                                <div class="social">
+                                    <a class="circle github" href="/auth/github">
+                                        <i class="fa fa-github fa-fw"></i>
+                                    </a>
+                                    <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                    <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                                </div>
+                                <div class="division">
+                                    <div class="line l"></div>
+                                      <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
+                                <div class="error"></div>
+                                <div class="form loginBox">
+                                    <form method="post" action="/login" accept-charset="UTF-8">
+                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                    </form>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="box">
+                            <div class="content registerBox" style="display:none;">
+                             <div class="form">
+                                <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="forgot login-footer">
+                            <span>Looking to 
+                                 <a href="javascript: showRegisterForm();">create an account</a>
+                            ?</span>
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                             <span>Already have an account?</span>
+                             <a href="javascript: showLoginForm();">Login</a>
+                        </div>
+                    </div>        
+    		      </div>
+		      </div>
+		  </div>
 	    <div class="srch"><button></button></div>
 		<script type="text/javascript">
 	         $('.main-search').hide();
@@ -117,58 +193,46 @@
 	<div class="content">
 		<div class="ordering-section" id="Order">
 			<div class="container">
-				<div class="ordering-section-head text-center wow bounceInRight" data-wow-delay="0.4s">
-					<h3>Ordering food was never so easy</h3>
-					<div class="dotted-line">
-						<h4>Just 4 steps to follow </h4>
+				<div class="">
+<div class="col-md-8 top-cuisines margin-bottom-minus">
+					<div class="top-cuisine-grids">
+						<div class="top-cuisine-grid">
+						    <a href=""><img src="images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid">
+						    <a href=""><img src="images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid">
+						    <a href=""><img src="images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid">
+						    <a href=""><img src="images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1">
+						    <a href=""><img src="images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1">
+						    <a href=""><img src="images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1">
+						    <a href=""><img src="images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid nth-grid1">
+						    <a href=""><img src="images/cuisine8.jpg" class="img-responsive" alt="" /> </a>
+							<label>Cuisine Name</label>
+					    </div>
+						<div class="clearfix"></div>
 					</div>
-				</div>
-				<div class="ordering-section-grids">
-					<div class="col-md-3 ordering-section-grid">
-						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
-							<i class="one"></i><br>
-							<i class="one-icon"></i>
-							<p>Choose <span>Your Restaurant</span></p>
-							<label></label>
-						</div>
-					</div>
-					<div class="col-md-3 ordering-section-grid">
-						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
-							<i class="two"></i><br>
-							<i class="two-icon"></i>
-							<p>Order  <span>Your Cuisine</span></p>
-							<label></label>
-						</div>
-					</div>
-					<div class="col-md-3 ordering-section-grid">
-						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
-							<i class="three"></i><br>
-							<i class="three-icon"></i>
-							<p>Pay   <span> online / on delivery</span></p>
-							<label></label>
-						</div>
-					</div>
-					<div class="col-md-3 ordering-section-grid">
-						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
-							<i class="four"></i><br>
-							<i class="four-icon"></i>
-							<p>Enjoy <span>your food </span></p>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-		<div class="special-offers-section">
-			<div class="container">
-				<div class="special-offers-section-head text-center dotted-line">
-					<h4>Latest Post</h4>
-				</div>
+        </div>
+        <div class="col-md-4 margin-bottom-minus-right-column">
 				<div class="special-offers-section-grids">
-				 <div class="m_3"><span class="middle-dotted-line"> </span> </div>
-				   <div class="container">
-					  <ul id="flexiselDemo3">
-						<li>
 							<div class="offer">
 								<div class="offer-image">	
 									<img src="images/p1.jpg" class="img-responsive" alt=""/>
@@ -181,292 +245,92 @@
 								</div>
 								<div class="clearfix"></div>
 							</div>
-						</li>
-						<li>
+							<br>
 							<div class="offer">
 								<div class="offer-image">	
-									<img src="images/p2.jpg" class="img-responsive" alt=""/>
+									<img src="images/p1.jpg" class="img-responsive" alt=""/>
 								</div>
 								<div class="offer-text">
-									<h4>Chicken Jumbo pack lorem</h4>
+									<h4>Olister Combo pack lorem</h4>
 									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
 									<input type="button" value="Grab It">
 									<span></span>
 								</div>
 								<div class="clearfix"></div>
 							</div>
-						</li>
-						<li>
+					<br>
 							<div class="offer">
 								<div class="offer-image">	
-									<img src="images/p3.jpg" class="img-responsive" alt=""/>
+									<img src="images/p1.jpg" class="img-responsive" alt=""/>
 								</div>
 								<div class="offer-text">
-									<h4>Crab Combo pack lorem</h4>
+									<h4>Olister Combo pack lorem</h4>
 									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
 									<input type="button" value="Grab It">
 									<span></span>
 								</div>
-								
 								<div class="clearfix"></div>
-								</div>
-						</li>
-						<li>
-							<div class="offer">
-								<div class="offer-image">	
-									<img src="images/p2.jpg" class="img-responsive" alt=""/>
-								</div>
-								<div class="offer-text">
-									<h4>Chicken Jumbo pack lorem</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-									<input type="button" value="Grab It">
-									<span></span>
-								</div>
-								
-								<div class="clearfix"></div>
-								</div>
-					    </li>
-					 </ul>
-				 	</div>
+							</div>
+					</div></div>
+	</div></div>
 			</div>
 		</div>
-		</div>
-		<div class="popular-restaurents" id="Popular-Restaurants">
-			<div class="container">
-				<div class="col-md-4 top-restaurents">
-					<div class="top-restaurent-head">
-						<h3>Top Restaurants</h3>
-					</div>
-					<div class="top-restaurent-grids">
-						<div class="top-restaurent-logos">
-							<div class="res-img-1 wow bounceIn" data-wow-delay="0.4s">
-								<img src="images/restaurent-1.jpg" class="img-responsive" alt="" />
-							</div>
-							<div class="res-img-2 wow bounceIn" data-wow-delay="0.4s">
-							    <img src="images/restaurent-2.jpg" class="img-responsive" alt="" />
-							</div>
-							<div class="res-img-1 wow bounceIn" data-wow-delay="0.4s">
-							    <img src="images/restaurent-3.jpg" class="img-responsive" alt="" />
-							</div>
-							<div class="res-img-2 wow bounceIn" data-wow-delay="0.4s">
-							    <img src="images/restaurent-4.jpg" class="img-responsive" alt="" />
-							</div>
-							<div class="res-img-1 nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-							    <img src="images/restaurent-5.jpg" class="img-responsive" alt="" />
-							</div>
-							<div class="res-img-2 nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-							    <img src="images/restaurent-6.jpg" class="img-responsive" alt="" />
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-8 top-cuisines">
-					<div class="top-cuisine-head">
-						<h3>Top Cuisines</h3>
-					</div>
-					<div class="top-cuisine-grids">
-						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="images/cuisine8.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<div class="contact-section" id="contact">
-			<div class="container">
-				<div class="contact-section-grids">
-				
-					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
-						<h4>Site Links</h4>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">About Us</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Contact Us</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Privacy Policy</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Terms of Use</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 contact-section-grid wow fadeInRight" data-wow-delay="0.4s">
-						<h4>Follow Us On...</h4>
-						<ul>
-							<li><i class="fb"></i></li>
-							<li class="data"> <a href="#">  Facebook</a></li>
-						</ul>
-						<ul>
-							<li><i class="tw"></i></li>
-							<li class="data"> <a href="#">Twitter</a></li>
-						</ul>
-						<ul>
-							<li><i class="in"></i></li>
-							<li class="data"><a href="#"> Linkedin</a></li>
-						</ul>
-						<ul>
-							<li><i class="gp"></i></li>
-							<li class="data"><a href="#">Google Plus</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 contact-section-grid nth-grid wow fadeInRight" data-wow-delay="0.4s">
-						<h4>Subscribe Newsletter</h4>
-						<p>To get latest updates and food deals every week</p>
-						<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-						<input type="submit" value="submit">
-						</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
+
 	</div>
+
 	<!-- content-section-ends -->
 	<!-- footer-section-starts -->
 	<div class="footer">
 		<div class="container">
-			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2014  All rights  Reserved | Template by &nbsp;<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+				<div class="row">
+				<div class="col-md-6">
+			<p class="wow fadeInLeft" data-wow-delay="0.4s"><a href="#">About Us</a>|<a href="#">Contact Us</a>|<a href="#">Privacy Policy</a>|<a href="#">Terms of Use</a></p>
+		</div>
+		</div><br>
+			<div class="row">
+				<div class="col-md-6">
+			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2014  All rights  Reserved | Halal &nbsp;<a href="#" target="target_blank">Spot</a></p>
+		</div>
+		<div class="col-md-6 contact-section-grid fadeInRight">
+			<p><i class="fb"></i>&nbsp;<i class="tw"></i>&nbsp;<i class="in"></i>&nbsp;<i class="gp"></i></p>
+		</div>
+		</div>
 		</div>
 	</div>
-	<div class="modal fade" id="myLogin" role="dialog">
-		<div class="modal-dialog"  style="padding-top: 10%;">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-     <form method="post" action="#" >
-      <div class="modal-body"> 
-      <button type="button" class="close" data-dismiss="modal">X</button>   
-        <div class="account_grid">
-			   <div class="col-md-12 login-right wow fadeInRight text-center" data-wow-delay="0.4s">
-			  	<h3>LOGIN CUSTOMERS</h3>
-				<p>If you have an account with us, please log in.</p>
-				<form>
-				  <div>
-					<span>Email Address<label>*</label></span>
-					<input type="text"> 
-				  </div>
-				  <div>
-					<span>Password<label>*</label></span>
-					<input type="text"> 
-				  </div><br>
-				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login">
-			    </form>
-			   </div>	
-			   <div class="clearfix"> </div>
-			 </div>                                                    
-      </div>
-     </form>  
-    </div>
-</div>
-  </div>
-  <div class="modal fade" id="myRegister" role="dialog">
-		<div class="modal-dialog"  style="padding-top: 10%;">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-    	<div class="main">
-	  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
-    <li><a data-toggle="tab" href="#menu1">Register</a></li>
-  </ul>
-
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-         <form method="post" action="#" >
-      <div class="modal-body"> 
-      <button type="button" class="close" data-dismiss="modal">X</button>   
-        <div class="account_grid">
-			   <div class="col-md-12 login-right wow fadeInRight text-center" data-wow-delay="0.4s">
-			  	<h3>LOGIN CUSTOMERS</h3>
-				<p>If you have an account with us, please log in.</p>
-				  <div>
-					<span>Email Address<label>*</label></span>
-					<input type="text"  class="form-control"> 
-				  </div>
-				  <div>
-					<span>Password<label>*</label></span>
-					<input type="text"  class="form-control"> 
-				  </div><br>
-				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login">
-			   </div>	
-			   <div class="clearfix"> </div>
-			 </div>                                                    
-      </div>
-     </form> 
-    </div>
-    <div id="menu1" class="tab-pane fade">
-       <form method="post" action="#" >
-      <div class="modal-body"> 
-      <button type="button" class="close" data-dismiss="modal">X</button>   
-        <div class="account_grid">
-			   <div class="col-md-12 login-right wow fadeInRight text-center" data-wow-delay="0.4s">
-			  	<h3>REGISTER CUSTOMERS</h3>
-				<p>If you have an account with us, please log in.</p>
-				<form>
-				  <div>
-					<span>Email Address<label>*</label></span>
-					<input type="text"  class="form-control"> 
-				  </div>
-				  <div>
-					<span>Password<label>*</label></span>
-					<input type="text"  class="form-control"> 
-				  </div><br>
-				   <div>
-					<span>Confirm Password<label>*</label></span>
-					<input type="text"  class="form-control"> 
-				  </div><br>
-				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Sign Up">
-			    </form>
-			   </div>	
-			   <div class="clearfix"> </div>
-			 </div>                                                    
-      </div>
-     </form> 
-    </div>
-  </div>
-	    </div> </div>
-</div>
-  </div>
+	
 	<!-- footer-section-ends -->
+	<script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};	
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+		</script>
 	  <script type="text/javascript">
 						$(document).ready(function() {
 							/*

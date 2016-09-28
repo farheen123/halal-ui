@@ -455,7 +455,7 @@ a.simpleCart_empty {
 	margin:0 4% 5% 0;
 }
 .top-cuisine-grid label{
-	padding: 7px 27px;
+	padding: 7px 33px;
 	font-size: 17.37px;
 	color: #515151;
 	border: 1px solid #DBDBDB;
@@ -583,7 +583,7 @@ a.simpleCart_empty {
 .contact-section-grid ul {
 	border-bottom:1px dotted #9D9D9D;/*--888888*/
 }
-.contact-section-grid ul li i.point{
+.contact-section-grid i.point{
 	width:20px;
 	height:15px;
 	background: url("../images/img-sprite.png") no-repeat -260px -46px;
@@ -591,7 +591,7 @@ a.simpleCart_empty {
 	vertical-align: middle;
 	margin-right:5px;
 }
-.contact-section-grid ul li i.fb{
+.contact-section-grid i.fb{
 	width:15px;
 	height:15px;
 	background: url("../images/img-sprite.png") no-repeat -280px -46px;
@@ -600,7 +600,7 @@ a.simpleCart_empty {
 	margin-right:5px;
 	border-radius: 3px;
 }
-.contact-section-grid ul li i.tw{
+.contact-section-grid i.tw{
 	width:15px;
 	height:15px;
 	background: url("../images/img-sprite.png") no-repeat -295px -46px;
@@ -609,7 +609,7 @@ a.simpleCart_empty {
 	margin-right:5px;
 	border-radius: 3px;
 }
-.contact-section-grid ul li i.in{
+.contact-section-grid i.in{
 	width:15px;
 	height:15px;
 	background: url("../images/img-sprite.png") no-repeat -310px -46px;
@@ -618,7 +618,7 @@ a.simpleCart_empty {
 	margin-right:5px;
 	border-radius: 3px;
 }
-.contact-section-grid ul li i.gp{
+.contact-section-grid i.gp{
 	width:15px;
 	height:15px;
 	background: url("../images/img-sprite.png") no-repeat -325px -46px;
@@ -641,7 +641,8 @@ a.simpleCart_empty {
 }
 .contact-section-grid {
 	width: 24%;
-	margin-right: 1%;
+	/*margin-right: 1%;*/
+	float:right;
 }
 .contact-section-grid p{
 	color:#8F8F8F;
@@ -809,7 +810,7 @@ ul.qty li p {
 }
 /*-- cart-page --*/
 .footer{
-	padding:3em 0;
+	padding:1em 0;
 	background:#4D4D4D;
 }
 .footer p{
@@ -3903,7 +3904,7 @@ a.morebtn{
 		margin: 0 5% 5% 0;
 	}
 	.top-cuisine-grid label {
-		 padding: 5px 18.31px;
+		 padding: 5px 31.31px;
 		font-size: 14px;
 	}
 	.offer {
@@ -4110,7 +4111,10 @@ a.morebtn{
 	}
 	.logo {
 		width: 50%;
+		margin-bottom: -39px;
+		float: right;
 	}
+
 .logo img {
   width: 100%;
 }
@@ -4126,5 +4130,19 @@ a.morebtn {
 .pr-left {
   float: left;
   width: 69%;
+}
+}
+@media screen and (max-width:320px){
+.ordering-section{
+margin-top: 0px;
+} 
+.container {
+width: 320px;
+}
+.inner-banner-info {
+margin-top: -8px;
+}
+.col-xs-provides-3 {
+width: 7%;
 }
 }
