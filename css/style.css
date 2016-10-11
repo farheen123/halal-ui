@@ -135,7 +135,7 @@ hr {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 86vh;
+  height: 50vh;
   text-align: center;
 }
 #home h1 {
@@ -196,7 +196,7 @@ hr {
   padding-bottom: 0px;
 }
 #gallery .col-md-4 {
-  padding-top: 52px;
+  padding-top: 20px;
 }
 #gallery img {
   width: 100%;
