@@ -53,26 +53,39 @@
 <!-- home section -->
 <section id="home" class="parallax-section">
 	<div class="container">
-		<div class="row">
+<!-- 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<h1>Pure Halal Spot</h1>
 				<h2>Only Halal</h2>
 			</div>
-		</div>
+		</div> -->
 		<div class="row">
-				<div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-				<form action="#" method="post">
-					<div class="col-md-4 col-sm-4">
-						<input name="name" type="text" class="smoothScroll search btn" id="name" placeholder="Name">
-				  </div>
-					<div class="col-md-4 col-sm-4">
-						<input name="email" type="email" class="smoothScroll search btn" id="email" placeholder="Email">
-				  </div>
-					<div class="col-md-2 col-sm-4">
-						<input name="submit" type="submit" class="smoothScroll search btn" id="submit" value="SEARCH">
-					</div>
-				</form>
-			</div>
+            <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span id="search_concept">Filter by</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu " role="menu">
+                      <li><a href="#contains">Contains</a></li>
+                      <li><a href="#its_equal">It's equal</a></li>
+                      <li><a href="#greather_than">Greather than ></a></li>
+                      <li><a href="#less_than">Less than < </a></li>
+                      <li class="divider"></li>
+                      <li><a href="#all">Anything</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control btn btn-default" name="x" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                </span>
+            </div>
+        </div>
+    </div>
+ </div>
 		</div>
 	</div>		
 </section>
